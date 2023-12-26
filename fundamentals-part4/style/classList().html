@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Hello I'm visible</p>
+  <p class="invisible" id="notHere">
+    I should have a invisible class, but it got removed :(
+  </p>
+  <p class="oldClass">
+    I also should have an id that says "oldClass", but it got replaced to "howDoesThisWork" :O
+  </p>
+
+  <script>
+    let paragraph = document.querySelector(".invisible");
+    paragraph.classList.remove("invisible");
+
+    let paragraphId = document.querySelector(".oldClass");
+    paragraphId.classList.replace("oldClass", "howDoesThisWork");
+  </script>
+</body>
+</html>
