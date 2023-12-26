@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>
+    THE TITLE OF YOUR WEBPAGE
+  </h1>
+  <div id="container"></div>
+
+  <script>
+    // add paragraph that says "Hey I'm red!"
+    const par = document.createElement("p");
+    par.textContent = "Hey I'm red!";
+    
+    // h3 that says I'm a blue h3
+    const h3 = document.createElement("h3");
+    h3.style.color = "blue";
+    h3.textContent = "I'm a blue h3";
+
+    // div with black border and pink bg color
+    const div = document.createElement("div");
+    div.setAttribute("id", "theDiv");
+    div.style.border = "black";
+    div.style.backgroundColor = "pink";
+
+    // h1 in div "I'm in a div"
+    const h1 = document.createElement("h1");
+    h1.textContent = "I'm in a div";
+
+    // p "ME TOO!"
+    const par2 = document.createElement("p");
+    par2.textContent = "ME TOO!";
+
+    // append 
+    document.getElementById("container").appendChild(par);
+    document.getElementById("container").appendChild(h3);
+    document.getElementById("container").appendChild(div);
+    
+    document.getElementById("theDiv").appendChild(h1);
+    document.getElementById("theDiv").appendChild(par2);
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Method 1: less ideal -->
+  <button onclick="alert('Hello World')">Click me</button>
+
+  <!-- Method 2 -->
+  <button id="button">Click me 2</button>
+
+  <!-- Method 3 -->
+  <button id="button2">CLICK ME 3</button>
+
+  <!-- Method 3 with button -->
+  <button id="buttonWithFunc">CLICK ME, I HAVE A FUNCTION</button>
+
+  <script>
+    // Method 2
+    const btn = document.querySelector("#button");
+    button.onclick = () => alert("Hello World, Method 2");
+    // shorter version of:
+    /* button.onclick = function() {
+      alert("hello World, Method 2");
+    } */
+
+    // Method 3 
+    const button2 = document.querySelector("#button2");
+    button2.onclick = () => alert("Hello World, Method 3");
+
+    
+    // Method 3 with button
+    function alertFunction() {
+      alert("YAY! YOU DID IT!")
+    }
+
+    const buttonWithFunc = document.querySelector("#buttonWithFunc");
+    buttonWithFunc.addEventListener("click", alertFunction);
+  </script>
+</body>
+</html>

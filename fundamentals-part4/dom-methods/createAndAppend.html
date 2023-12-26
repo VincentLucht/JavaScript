@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // create element
+    let div = document.createElement("div");
+    
+    // give id
+    div.id = "myDiv";
+
+    // give class name
+    div.className = "myClass";
+
+    // add text to div
+    let text = document.createElement("p");
+    text.textContent = "This is a new paragraph using JS";
+
+    // append
+    document.body.appendChild(div);
+    div.appendChild(text);
+  </script>
+</body>
+</html>

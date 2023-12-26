@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h1>My shopping list</h1>
+    <p>Enter a new item: <input type="text" id="userInput"><button onclick="addItem()">Add item</button></p>
+  </div>
+
+  <ul id="list"></ul>
+
+  <script>
+    function addItem() {
+      let inputField = document.querySelector("#userInput");
+      // get what the user inputted in input when user presses button
+      let userInput = inputField;
+      let itemName = userInput.value;
+
+      // display a new list item + delete button
+      let listItem = document.createElement("li");
+      listItem.textContent = itemName;
+
+      let deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      // add button functionality (syntax!!!)
+      deleteButton.addEventListener("click", () => listItem.remove());
+
+      // append delete button to listItem so that it is on the same line
+      listItem.appendChild(deleteButton)
+      //document.getElementById("list").appendChild(listItem);
+      document.querySelector("#list").appendChild(listItem);
+
+      // clear input field
+      inputField.value = "";
+    }
+  </script>
+</body>
+</html>
