@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getAttribute() Showcase</title>
+</head>
+<body>
+
+    <div id="myElement" data-custom="imHidden">What is my value?</div>
+
+    <script>
+        // Get the element by its ID
+        let myElement = document.getElementById("myElement");
+
+        // Get the value of the "data-custom" attribute
+        let customAttributeValue = myElement.getAttribute("data-custom");
+
+        // Display the value
+        let paragraph = document.createElement("p");
+        paragraph.textContent = "The Value of data-custom attribute is: " + customAttributeValue;
+
+        document.body.appendChild(paragraph)
+    </script>
+
+</body>
+</html>
