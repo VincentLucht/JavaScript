@@ -6,6 +6,8 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- add after -->
+  <h1 id="testh1">Test Test</h1>
   <script>
     // create element
     let div = document.createElement("div");
@@ -23,6 +25,9 @@
     // append
     document.body.appendChild(div);
     div.appendChild(text);
+    // add after
+    let h1element = document.querySelector("#testh1"); 
+    h1element.insertAdjacentElement("afterend", text);
   </script>
 </body>
 </html>
