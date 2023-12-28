@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 1) avoid these! -->
+  <button onclick="alert('You clicked me!')">Im a HTML attribute event handler!</button>
+  <button onclick="showAlert()">Im also a HTML attribute event handler, but I get it through a function</button>
+
+  <!-- 2) -->
+  <button class="btn">Click Me! I use a event handler in JS</button>
+
+  <br>
+
+  <!-- 3) -->
+  <button class="buttonTest">addEventListener here</button>
+
+  <script>  
+    function showAlert() {
+      alert("You clicked me!")
+    }
+
+    // 2)
+    let button = document.querySelector(".btn");
+
+    button.onclick = () => alert("You clicked me!");
+
+    // 3)
+    let button2 = document.querySelector(".buttonTest");
+    button2.addEventListener("click", function() {
+      alert("clicked!");
+    });
+  </script>
+</body>
+</html>
