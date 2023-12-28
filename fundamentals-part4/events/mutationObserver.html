@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MutationObserver Demo: ChildList</title>
+</head>
+<body>
+    <ul id="language">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+    </ul>
+
+    <button id="btnStart">Start Observing</button>
+    <button id="btnStop">Stop Observing</button>
+    <button id="btnAdd">Add</button>
+    <button id="btnRemove">Remove the Last Child</button>
+
+    <script>
+      // selecting list
+      let list = document.querySelector('#language');
+
+      // selecting buttons
+      let btnAdd = document.querySelector('#btnAdd');
+      let btnRemove = document.querySelector('#btnRemove');
+      let btnStart = document.querySelector('#btnStart');
+
+      let btnStop = document.querySelector('#btnStop');
+      btnStop.disabled = true;
+    </script>
+</body>
+</html>
