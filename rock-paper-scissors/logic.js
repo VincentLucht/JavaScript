@@ -1,21 +1,21 @@
 function getUserInput() {
-    let options = ["rock", "paper", "scissors"];
+    let userChoice;
+    let buttonDiv = document.querySelector("#buttonDiv");
+    buttonDiv.addEventListener("click", (event) => {
+        let target = event.target;
 
-    while (true) {
-        let userChoiceLowercase = prompt("");
-        let userChoice = userChoiceLowercase.toLowerCase();
-    
-        // convert the first letter to uppercase 
-        let displayedOption = userChoice.charAt(0).toUpperCase() + userChoice.slice(1);
-
-        // check if the user inputted correctly
-        if (options.includes(userChoice)) {
-            console.log(`You chose: ${displayedOption}`);
-            return userChoice;
-        } else {
-            console.log("Choose a valid option");
+        switch(target.id) {
+            case "rock":
+                console.log("Rock");
+                return userChoice = "Rock";
+            case "paper":
+                console.log("Paper");
+                return userChoice = "Paper";
+            case "scissors":
+                console.log("Scissors")
+                return userChoice = "Scissors";
         }
-    }
+    })
 }
 
 function getComputerChoice() {
@@ -51,25 +51,9 @@ function playRound(userChoice, comChoice) {
     }
 }
 
-function gameBestOfFive() {
-    while (point < 3 && comPoint < 3) {
-        // get both inputs
-        userChoice = getUserInput();
-        comChoice = getComputerChoice().toLowerCase();
-
-        playRound(userChoice, comChoice)
-    }
-    // display the winner
-    if (point == 3) {
-        console.log("Congratulations, you won!");
-    } else if (comPoint == 3) {
-        console.log("The computer won, you lose!")
-    }
-}
-
 // initialize points
 point = 0;
 comPoint = 0;
 
 // play the game
-gameBestOfFive()
+getUserInput()
