@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // func that adds 7 
+    function add7(number) {
+      return number + 7;
+    }
+    // alert(add7(3))
+
+    // func that multiplies
+    function multiply(number1, number2) {
+      return number1 * number2;
+    }
+    // alert(multiply(number1=3, number2=3))
+
+    // func that capitalizes 
+    function capitalize() {
+      let user_input = prompt("Type something")
+      let capitalized_string = user_input.charAt(0).toUpperCase() + user_input.slice(1);
+      alert(capitalized_string) 
+    }
+    // return last letter of string
+    function lastLetterOfWord(string) {
+      let lastIndex = string.length - 1;
+      let lastLetter = string.charAt(lastIndex);
+      return lastLetter
+    }
+    alert(lastLetterOfWord("test"))
+  </script>
+</body>
+</html>
