@@ -55,10 +55,18 @@ function playRound(userChoice, comChoice) {
         }
     }
     console.log(`User: ${point} || Computer: ${comChoice}`);
+    updateScore();
 }
 
 function updateScore() {
-    
+    let userScore = point;
+    let comScore = comPoint;
+
+    let spanUser = document.querySelector("#userscore");
+    spanUser.textContent = userScore;
+
+    let spanCom = document.querySelector("#computerscore");
+    spanCom.textContent = comScore;
 }
 // initialize points
 point = 0;
