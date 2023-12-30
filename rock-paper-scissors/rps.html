@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="rps.css">
   <title>Document</title>
 </head>
 <body>
   <div id="score">
-    <p>Score</p>
-    <br>
-    <p>User: <span id="userscore">0</span> Computer: <span id="computerscore">0</span></p>
+    <h1>Score</h1>
+    <div class="scoreImages">
+      <p><img id="userPicture" src="img/user-icon.png" alt="User logo"> </p>
+      <p><img id="comPicture" src="img/ai.png" alt="logo of computer, AI"></p>
+    </div>
+    <div class="scores">
+      <span id="userscore">0</span>
+      <span id="computerscore">0</span>
+    </div>
   </div>
 
   <main id="buttonDiv">

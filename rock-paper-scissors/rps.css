@@ -1,0 +1,87 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+#result {
+    font-size: 20px;
+}
+
+/* div hitbox
+div, main {
+    border: 1px solid wheat;
+} */
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    background-color: #1f2937;
+    color: white;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* score */
+.scoreImages {
+    display: flex;
+    justify-content: space-between;
+}
+
+.scores {
+    font-size: 32px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* buttons */
+#buttonDiv {
+    width: 332px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+button {
+    background-color: white;
+    border-color: grey;
+    border-style: solid;
+    border-width: 2px;
+    color: grey;
+    border-radius: 8px;
+    cursor: pointer;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    font-size: 14px;
+    width: 100px;
+
+    transition: background-color 0.15s,
+      color 0.15s;
+}
+button:hover {
+    background-color: grey;
+    color: white;
+}
+button:active {
+    opacity: 0.7;
+}
+
+/* images */
+#userPicture, #comPicture {
+    height: 100px;
+}
+
+#comPicture {
+    margin-right: 32.5px;
+    margin-left: 32.5px;
+}
