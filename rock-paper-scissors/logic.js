@@ -6,7 +6,7 @@ function getUserInput() {
 
         switch(target.id) {
             case "rock":
-                let rock = "Rock";
+                userChoice = "Rock";
                 break;
 
             case "paper":
@@ -32,9 +32,12 @@ function getComputerChoice() {
 }
 
 function playRound(userChoice, comChoice) {
+    let div = document.querySelector(".results")
+    let result = document.createElement("p");
     // replay round if draw
     if (userChoice == comChoice) {
-        console.log(`${userChoice} vs ${comChoice}, it's a draw!`);
+        result.textContent = `${userChoice} vs ${comChoice}, it's a draw!`;
+        div.appendChild(result);
     } else {
             // rock beats scissors
         if ((userChoice == "Rock" && comChoice == "Scissors") ||
@@ -42,16 +45,21 @@ function playRound(userChoice, comChoice) {
             (userChoice == "Paper" && comChoice == "Rock") ||
             // scissors beats paper
             (userChoice == "Scissors" && comChoice == "Paper")) {
-            console.log(`${userChoice} beats ${comChoice}, you get 1 point`);
+            result.textContent = `${userChoice} beats ${comChoice}, you get 1 point`;
+            div.append(result)
             point += 1;
         } else {
-            console.log(`${comChoice} beats ${userChoice}, the computer gets 1 point`);
+            result.textContent = `${comChoice} beats ${userChoice}, the computer gets 1 point`;
+            div.append(result)
             comPoint += 1;
         }
     }
     console.log(`User: ${point} || Computer: ${comChoice}`);
 }
 
+function updateScore() {
+    
+}
 // initialize points
 point = 0;
 comPoint = 0;
