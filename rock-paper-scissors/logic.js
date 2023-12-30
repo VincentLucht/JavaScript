@@ -1,5 +1,5 @@
 function getUserInput() {
-    userChoice;
+    let userChoice;
     let buttonDiv = document.querySelector("#buttonDiv");
     buttonDiv.addEventListener("click", (event) => {
         let target = event.target;
@@ -29,7 +29,6 @@ function getComputerChoice() {
 }
 
 function playRound(userChoice, comChoice) {
-    let div = document.querySelector(".results")
     let result = document.querySelector("#result");
     // replay round if draw
     if (userChoice == comChoice) {
@@ -49,6 +48,7 @@ function playRound(userChoice, comChoice) {
         }
     }
     updateScore();
+    checkScore();
 }
 
 function updateScore() {
@@ -62,8 +62,23 @@ function updateScore() {
     spanCom.textContent = comScore;
 }
 
+function checkScore() {
+    if (point == 3) {
+        result.textContent = "Congratulations, you won!"
+        disableButtons()
+    } else if (comPoint == 3) {
+        result.textContent = "Computer wins!"
+        disableButtons()
+    }
+}
+
+function disableButtons() {
+    document.querySelector("#rock").disabled = true;
+    document.querySelector("#paper").disabled = true;
+    document.querySelector("#scissors").disabled = true;
+}
+
 // initialize points
 point = 0;
 comPoint = 0;
-let userChoice;
 getUserInput()
