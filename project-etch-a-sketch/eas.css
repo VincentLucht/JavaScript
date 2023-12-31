@@ -1,11 +1,15 @@
-/* div hitbox */
+body {
+    background-color: gray;
+    margin: 0;
+}
+
 .mainDiv {
     display: flex;
     height: 100vh;
 }
 
 div{
-    border: 1px solid wheat;
+    border: 1px solid ;
     height: 100%;
     display: flex;
     align-items: center;

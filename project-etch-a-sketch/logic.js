@@ -1,19 +1,42 @@
+let loopLength = 0;
+let loop = true;
 let mainDiv = document.querySelector(".mainDiv");
 
-for (let i = 1; i <= 16; i++){
-    let divContainer = document.createElement("div");
-    divContainer.className = "container"
-    for (let j = 1; j <= 16; j++) {
-        let div = document.createElement("div");
-        div.textContent = i;
+button = document.querySelector("#sizeButton");
+button.addEventListener("click", function() {
+    loop = true;
+    while (loop == true) {
+        let userInput = parseInt(prompt("How many squares do you want?"));
 
-        addHoverEffect(element=div);
-        clickChangeColor(element=div);
+        if (userInput <= 0) {
+            alert("Please enter a value above 0.");
+        } else if (userInput > 100) {
+            alert("Please enter a lesser value.");
+        } else {
+            loopLength = userInput;
+            loop = false;
+            createGrid(loopLength);
+            break;
+        }
+    }
+});
 
-        divContainer.appendChild(div)
-        mainDiv.appendChild(divContainer);
+function createGrid(loopLength) {
+    for (let i = 0; i < loopLength; i++){
+        let divContainer = document.createElement("div");
+        divContainer.className = "container"
+        for (let j = 0; j < loopLength; j++) {
+            let div = document.createElement("div");
+    
+            addHoverEffect(element=div);
+            clickChangeColor(element=div);
+    
+            divContainer.appendChild(div)
+            mainDiv.appendChild(divContainer);
+        }
     }
 }
+
 
 function addHoverEffect(element) {
     element.addEventListener("mouseover", function() {
