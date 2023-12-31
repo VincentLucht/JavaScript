@@ -22,6 +22,9 @@ button.addEventListener("click", function() {
 });
 
 function createGrid(loopLength) {
+    // remove old grid
+    mainDiv.innerHTML = "";
+
     for (let i = 0; i < loopLength; i++){
         let divContainer = document.createElement("div");
         divContainer.className = "container"
@@ -36,7 +39,6 @@ function createGrid(loopLength) {
         }
     }
 }
-
 
 function addHoverEffect(element) {
     element.addEventListener("mouseover", function() {
