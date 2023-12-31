@@ -1,4 +1,3 @@
-// create a loop that creates a 16x16 grid
 let mainDiv = document.querySelector(".mainDiv");
 
 for (let i = 1; i <= 16; i++){
@@ -8,15 +7,34 @@ for (let i = 1; i <= 16; i++){
         let div = document.createElement("div");
         div.textContent = i;
 
-        /* add event listener to change color to a div */
-        div.addEventListener("mouseover", function() {
-            div.style.backgroundColor = "red";
-        });
-        div.addEventListener("mouseout", function() {
-            div.style.backgroundColor = "";
-        });
+        addHoverEffect(element=div);
+        clickChangeColor(element=div);
 
         divContainer.appendChild(div)
         mainDiv.appendChild(divContainer);
     }
+}
+
+function addHoverEffect(element) {
+    element.addEventListener("mouseover", function() {
+        if (element.style.backgroundColor != "red") {
+            element.style.backgroundColor = "blue";
+        }
+    });
+    element.addEventListener("mouseout", function() {
+        if (element.style.backgroundColor != "red") {
+            element.style.backgroundColor = "";
+        }
+    });
+}
+
+
+function clickChangeColor(element) {
+    element.addEventListener("click", function() {
+        if (element.style.backgroundColor == "red") {
+            element.style.backgroundColor = "";
+        } else {
+            element.style.backgroundColor = "red";
+        }
+    })
 }
