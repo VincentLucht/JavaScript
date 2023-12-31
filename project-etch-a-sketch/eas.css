@@ -1,12 +1,20 @@
 /* div hitbox */
 .mainDiv {
-    border: 1px solid red;
-}
-div{
-    border: 1px solid wheat;
+    display: flex;
+    height: 100vh;
 }
 
-.mainDiv {
+div{
+    border: 1px solid wheat;
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {    
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
