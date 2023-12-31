@@ -1,0 +1,12 @@
+/* div hitbox */
+.mainDiv {
+    border: 1px solid red;
+}
+div{
+    border: 1px solid wheat;
+}
+
+.mainDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
