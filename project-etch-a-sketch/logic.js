@@ -1,6 +1,7 @@
 let loopLength = 0;
 let loop = true;
 let mainDiv = document.querySelector(".mainDiv");
+standardGrid();
 
 button = document.querySelector("#sizeButton");
 button.addEventListener("click", function() {
@@ -27,8 +28,24 @@ function createGrid(loopLength) {
 
     for (let i = 0; i < loopLength; i++){
         let divContainer = document.createElement("div");
-        divContainer.className = "container"
+        divContainer.className = "container";
         for (let j = 0; j < loopLength; j++) {
+            let div = document.createElement("div");
+    
+            addHoverEffect(element=div);
+            clickChangeColor(element=div);
+    
+            divContainer.appendChild(div)
+            mainDiv.appendChild(divContainer);
+        }
+    }
+}
+
+function standardGrid() {
+    for (let i = 0; i < 16; i++){
+        let divContainer = document.createElement("div");
+        divContainer.className = "container";
+        for (let j = 0; j < 16; j++) {
             let div = document.createElement("div");
     
             addHoverEffect(element=div);
