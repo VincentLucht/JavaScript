@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // can either use this syntax
+    let obj = new Object();
+
+    // or this syntax
+    let user = {};
+
+    // declaring an object
+    let person = {
+      name:"John", // key = "name", stores value "John"
+      age: 30,     // key = "age", stores value 30
+    };
+
+    // access values of object
+    person.name;
+    person.age;
+
+    // add keys and values to objects
+    let fruit = "apple";
+    let bag = {};
+    bag[fruit] = 5;
+
+    // delete property
+    delete user.age;
+
+    // multiword property names
+    let person2 = {
+      name: "Jeff",
+      age: 32,
+      "likes birds": true // multiword name must be quoted
+    }
+
+    let key = "likes birds";
+    person2[key] = false;
+    console.log(person2[key]);
+
+    // looping through a dict 
+    let dict = {
+      name: "John",
+      age: 30,
+      isAdmin: true,
+    };
+
+    for (let key in dict) {
+      // keys
+      alert(key); // name, age, isAdmin
+
+      // values for the keys
+      alert(dict[key]); // John, 30, true
+    }
+
+  </script>
+</body>
+</html>
