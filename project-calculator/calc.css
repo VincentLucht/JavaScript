@@ -1,0 +1,36 @@
+body {
+    margin: 0px;
+}
+
+/* div hitbox */
+/* div {
+    border: 1px solid wheat;
+} */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.operators {
+    display: flex;
+    flex-direction: column;
+}
+
+/* numpad properties */
+.num {
+    width: 75px;
+    height: 75px;
+}
+
+.inputDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+#inputField {
+    height: 50px;
+    width: 100%;
+}
