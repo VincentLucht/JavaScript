@@ -107,10 +107,14 @@ buttons.forEach(function(button) {
     
             // operators
             case "plus":
-                popDisplay("+");
-                firstNumberOperation = false;
-                secondNumberOperation = true;
-                operator = "plus";
+                if (firstNumber == "") {
+                    console.log("Add a number first please.");
+                } else {
+                    popDisplay("+");
+                    firstNumberOperation = false;
+                    secondNumberOperation = true;
+                    operator = "plus";
+                }
                 break;
     
             // clear/delete
@@ -225,12 +229,11 @@ function clearDisplay() {
 };
 
 function deleteLastDigit() {
-    // check whether is it the first or second number
     if (firstNumberOperation == true) {
         firstNumber = firstNumber.slice(0, -1);
         popDisplay(firstNumber);
     } else if (firstNumberOperation == false) {
         secondNumber = secondNumber.slice(0, -1);
         popDisplay(secondNumber);
-    }
+    };
 };
