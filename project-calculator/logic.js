@@ -32,19 +32,15 @@ function operate(firstNumber, operator, secondNumber) {
     switch (operator) {
         case "plus":
             return add(num1, num2);
-            break;
 
         case "-":
             return subtract(num1, num2);
-            break;
 
         case "*":
             return multiply(num1, num2);
-            break;
 
         case "/":
             return divide(num1, num2);
-            break;
     }
 }
 
@@ -125,6 +121,7 @@ buttons.forEach(function(button) {
             
             case "clear":
                 clearDisplay();
+                break;
         }
     } 
     
@@ -187,15 +184,19 @@ buttons.forEach(function(button) {
                 break;
             
             case "equals":
-                result = operate(firstNumber, operator, secondNumber);
+                let result = operate(firstNumber, operator, secondNumber);
                 popDisplay(result);
+                firstNumber = true;
+                break;
     
             // clear/delete
             case "delete":
+                deleteLastDigit()
                 break;
             
             case "clear":
                 clearDisplay();
+                break;
         }
     }
     });
@@ -209,9 +210,12 @@ function popDisplay(number) {
 
 function clearDisplay() {
     firstNumber = ""; 
-    popDisplay(firstNumber);
+    secondNumber = "";
+    result = "";
+    popDisplay("")
     // check whether it is the first or second number
     // add functionality that sets firstNumberNumberOperation to true again
+    firstNumberOperation = true;
 }
 
 function deleteLastDigit() {
