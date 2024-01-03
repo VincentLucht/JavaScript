@@ -1,5 +1,6 @@
-body {
+* {
     margin: 0px;
+    padding: 0px;
 }
 
 /* div hitbox */
@@ -34,4 +35,12 @@ main {
     height: 50px;
     width: 100%;
     border: 2px solid wheat;
+}
+
+/* grow the clear/delete and 0 buttons */
+#clear, #delete {
+    width: 36.7%
+}
+#zero {
+    width: 49.3%;
 }

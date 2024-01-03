@@ -45,6 +45,7 @@ numpad.addEventListener("click", (event) => {
     let target = event.target;
 
     switch(target.id) {
+        // section 4
         case "7": populateDisplay(7);
         break;
 
@@ -56,4 +57,9 @@ numpad.addEventListener("click", (event) => {
 
 function populateDisplay(number) {
     display.textContent = number;
+}
+
+
+function clearDisplay() {
+    // clears the display 
 }
