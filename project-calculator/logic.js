@@ -98,6 +98,16 @@ buttons.forEach(function(button) {
             firstNumber += "9";
             popDisplay(firstNumber);
             break;
+
+        // operators
+
+        // clear/delete
+        case "delete":
+            deleteLastDigit();
+            break;
+        
+        case "clear":
+            clearDisplay();
     }
     });
 });
@@ -109,11 +119,13 @@ function popDisplay(number) {
 
 
 function clearDisplay() {
-    // clears the display 
+    firstNumber = ""; 
+    popDisplay(firstNumber);
 }
 
 function deleteLastDigit() {
-    // deletes last digit
+    firstNumber = firstNumber.slice(0, -1);
+    popDisplay(firstNumber);
 }
 
 
