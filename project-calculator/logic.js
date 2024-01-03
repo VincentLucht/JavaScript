@@ -182,7 +182,7 @@ buttons.forEach(function(button) {
                     popDisplay("+");
                     secondNumberOperation = false;
                 } else {
-                    console.log("The condition is false.");
+                    console.log("Nope!");
                 };
                 break;
             
@@ -219,33 +219,18 @@ function clearDisplay() {
     secondNumber = "";
     operator = "";
     result = "";
-    popDisplay("")
+    popDisplay("");
 
     firstNumberOperation = true;
 };
 
 function deleteLastDigit() {
-    firstNumber = firstNumber.slice(0, -1);
-    popDisplay(firstNumber);
     // check whether is it the first or second number
+    if (firstNumberOperation == true) {
+        firstNumber = firstNumber.slice(0, -1);
+        popDisplay(firstNumber);
+    } else if (firstNumberOperation == false) {
+        secondNumber = secondNumber.slice(0, -1);
+        popDisplay(secondNumber);
+    }
 };
-
-
-// if 7 is pressed, then:
-    // show 7 on the display
-    // add 7 to the variable firstNumber
-
-    // if + is pressed, then:
-        // switch to the second variable 
-        // show + on the display
-        // assign + to the operator variable
-
-        // if another number is pressed, then:
-            // display the other number on the display
-            // add the other number to the variable secondNumber
-
-            // if user presses =, then:
-                // call a the + function, assign each number to that function
-                // show the result on the display
-
-// else wait
