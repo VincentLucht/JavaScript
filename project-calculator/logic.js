@@ -178,8 +178,12 @@ buttons.forEach(function(button) {
     
             // operators
             case "plus":
-                popDisplay("+");
-                secondNumberOperation = false;
+                if (display == "") {
+                    popDisplay("+");
+                    secondNumberOperation = false;
+                } else {
+                    console.log("The condition is false.");
+                };
                 break;
             
             case "equals":
@@ -215,7 +219,7 @@ function clearDisplay() {
     secondNumber = "";
     operator = "";
     result = "";
-    display.textContent
+    popDisplay("")
 
     firstNumberOperation = true;
 };
