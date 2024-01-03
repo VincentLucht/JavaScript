@@ -1,31 +1,20 @@
-function add(...numbers) {
-    let sum = 0;
-    for (let number of numbers) {
-        sum += number;
-    };
-    console.log(sum);
-};
+function add(a, b) {
+    return a + b;
+}
 
-function subtract(...numbers) {
-    let sum = 0;
-    for (let number of numbers) {
-        sum -= number;
-    };
-    console.log(sum);
-};
+function subtract(a, b) {
+return a - b;
+}
 
-function multiply(num1, ...numbers) {
-    let sum = num1;
-    for (let number of numbers) {
-        sum *= number;
-    };
-    console.log(sum);
-};
+function multiply(a, b) {
+return a * b;
+}
 
-function divide(num1, ...numbers) {
-    let sum = num1;
-    for (let number of numbers) {
-        sum /= number;
-    };
-    console.log(sum);
-};
+function divide(a, b) {
+if (b !== 0) {
+    return a / b;
+} else {
+    return "You thought, I wouldn't think of this?";
+}
+}
+
