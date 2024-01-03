@@ -49,12 +49,55 @@ buttons.forEach(function(button) {
     button.addEventListener('click', function() {
     // You can perform actions here when a button is clicked
     switch (button.id) {
-        // section 5
+        case "zero":
+            firstNumber += "0";
+            popDisplay(firstNumber);
+            break;
 
-        // section 4
+        case "1":
+            firstNumber += "1";
+            popDisplay(firstNumber);
+            break;
+
+        case "2":
+            firstNumber += "2";
+            popDisplay(firstNumber);
+            break;
+
+        case "3":
+            firstNumber += "3";
+            popDisplay(firstNumber);
+            break;
+
+        case "4":
+            firstNumber += "4";
+            popDisplay(firstNumber);
+            break;
+
+        case "5":
+            firstNumber += "5";
+            popDisplay(firstNumber);
+            break;
+
+        case "6":
+            firstNumber += "6";
+            popDisplay(firstNumber);
+            break;
+
         case "7":
             firstNumber += "7";
-            
+            popDisplay(firstNumber);
+            break;
+
+        case "8":
+            firstNumber += "8";
+            popDisplay(firstNumber);
+            break;
+
+        case "9":
+            firstNumber += "9";
+            popDisplay(firstNumber);
+            break;
     }
     });
 });
@@ -68,6 +111,11 @@ function popDisplay(number) {
 function clearDisplay() {
     // clears the display 
 }
+
+function deleteLastDigit() {
+    // deletes last digit
+}
+
 
 // if 7 is pressed, then:
     // show 7 on the display
