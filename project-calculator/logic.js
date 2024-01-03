@@ -1,22 +1,22 @@
 function add(a, b) {
     return a + b;
-}
+};
 
 function subtract(a, b) {
     return a - b;
-}
+};
 
 function multiply(a, b) {
     return a * b;
-}
+};
 
 function divide(a, b) {
     if (b !== 0) {
         return a / b;
     } else {
         return "You thought, I wouldn't think of this?";
-    }
-}
+    };
+};
 
 let firstNumber = "";
 let operator = "";
@@ -41,8 +41,8 @@ function operate(firstNumber, operator, secondNumber) {
 
         case "/":
             return divide(num1, num2);
-    }
-}
+    };
+};
 
 
 // Event listeners
@@ -53,7 +53,6 @@ let buttons = document.querySelectorAll('.num');
 // Loop through each button and add a click event listener
 buttons.forEach(function(button) {
     button.addEventListener('click', function() {
-    // You can perform actions here when a button is clicked
     if (firstNumberOperation == true) {
         switch (button.id) {
             case "zero":
@@ -186,7 +185,10 @@ buttons.forEach(function(button) {
             case "equals":
                 let result = operate(firstNumber, operator, secondNumber);
                 popDisplay(result);
-                firstNumber = true;
+
+                firstNumber = result;
+                secondNumber = "";
+                firstNumberOperation = true;
                 break;
     
             // clear/delete
@@ -205,24 +207,24 @@ buttons.forEach(function(button) {
 
 function popDisplay(number) {
     display.textContent = number;
-}
+};
 
 
 function clearDisplay() {
     firstNumber = ""; 
     secondNumber = "";
+    operator = "";
     result = "";
-    popDisplay("")
-    // check whether it is the first or second number
-    // add functionality that sets firstNumberNumberOperation to true again
+    display.textContent
+
     firstNumberOperation = true;
-}
+};
 
 function deleteLastDigit() {
     firstNumber = firstNumber.slice(0, -1);
     popDisplay(firstNumber);
     // check whether is it the first or second number
-}
+};
 
 
 // if 7 is pressed, then:
