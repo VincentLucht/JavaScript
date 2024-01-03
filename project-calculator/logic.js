@@ -191,12 +191,15 @@ buttons.forEach(function(button) {
                 break;
             
             case "equals":
-                let result = operate(firstNumber, operator, secondNumber);
-                popDisplay(result);
-
-                firstNumber = result;
-                secondNumber = "";
-                firstNumberOperation = true;
+                if (secondNumber != "") {
+                    let result = operate(firstNumber, operator, secondNumber);
+                    popDisplay(result);
+                    console.log("this is also true")
+    
+                    firstNumber = result;
+                    secondNumber = "";
+                    firstNumberOperation = true;
+                };
                 break;
     
             // clear/delete
