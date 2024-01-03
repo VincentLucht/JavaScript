@@ -60,7 +60,7 @@ buttons.forEach(function(button) {
 });
 
 
-function populateDisplay(number) {
+function popDisplay(number) {
     display.textContent = number;
 }
 
