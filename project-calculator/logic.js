@@ -18,3 +18,20 @@ if (b !== 0) {
 }
 }
 
+let firstNumber, operator, secondNumber;
+
+function operate(firstNumber, operator, secondNumber) {
+    switch (operator) {
+        case "+": add(firstNumber, secondNumber);
+        break;
+
+        case "-": subtract(firstNumber, secondNumber);
+        break;
+
+        case "*": multiply(firstNumber, secondNumber);
+        break;
+
+        case "/": divide(firstNumber, secondNumber);
+        break;
+    }
+}
