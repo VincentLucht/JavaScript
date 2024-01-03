@@ -18,7 +18,9 @@ if (b !== 0) {
 }
 }
 
-let firstNumber, operator, secondNumber;
+let firstNumber = "";
+let operator = "";
+let secondNumber = "";
 
 function operate(firstNumber, operator, secondNumber) {
     switch (operator) {
@@ -40,20 +42,23 @@ function operate(firstNumber, operator, secondNumber) {
 // Event listeners
 let display = document.querySelector("#inputField")
 let displayVariable;
-let numpad = document.querySelector(".numpad");
-numpad.addEventListener("click", (event) => {
-    let target = event.target;
+let buttons = document.querySelectorAll('.num');
 
-    switch(target.id) {
+// Loop through each button and add a click event listener
+buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+    // You can perform actions here when a button is clicked
+    switch (button.id) {
+        // section 5
+
         // section 4
-        case "7": populateDisplay(7);
-        break;
-
-        // section 1
-        case "+": populateDisplay("+");
-        break;
+        case "7":
+            firstNumber += "7";
+            
     }
-})
+    });
+});
+
 
 function populateDisplay(number) {
     display.textContent = number;
@@ -63,3 +68,21 @@ function populateDisplay(number) {
 function clearDisplay() {
     // clears the display 
 }
+
+// if 7 is pressed, then:
+    // show 7 on the display
+    // add 7 to the variable firstNumber
+
+    // if + is pressed, then:
+        // show + on the display
+        // assign + to the operator variable
+
+        // if another number is pressed, then:
+            // display the other number on the display
+            // add the other number to the variable secondNumber
+
+            // if user presses =, then:
+                // call a the + function, assign each number to that function
+                // show the result on the display
+
+// else wait
