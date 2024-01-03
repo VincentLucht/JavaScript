@@ -33,13 +33,13 @@ function operate(firstNumber, operator, secondNumber) {
         case "plus":
             return add(num1, num2);
 
-        case "-":
+        case "minus":
             return subtract(num1, num2);
 
-        case "*":
+        case "multiply":
             return multiply(num1, num2);
 
-        case "/":
+        case "division":
             return divide(num1, num2);
     };
 };
@@ -116,6 +116,39 @@ buttons.forEach(function(button) {
                     operator = "plus";
                 }
                 break;
+            
+            case "minus":
+                if (firstNumber == "") {
+                    console.log("Add a number first please.");
+                } else {
+                    popDisplay("-");
+                    firstNumberOperation = false;
+                    secondNumberOperation = true;
+                    operator = "minus";
+                }
+                break;
+
+            case "multiply":
+                if (firstNumber == "") {
+                    console.log("Add a number first please.");
+                } else {
+                    popDisplay("*");
+                    firstNumberOperation = false;
+                    secondNumberOperation = true;
+                    operator = "multiply";
+                }
+                break;
+            
+            case "division":
+                if (firstNumber == "") {
+                    console.log("Add a number first please.");
+                } else {
+                    popDisplay("÷");
+                    firstNumberOperation = false;
+                    secondNumberOperation = true;
+                    operator = "division";
+                }
+                break;
     
             // clear/delete
             case "delete":
@@ -189,12 +222,38 @@ buttons.forEach(function(button) {
                     console.log("Nope!");
                 };
                 break;
+
+            case "minus":
+                if (display == "") {
+                    popDisplay("-");
+                    secondNumberOperation = false;
+                } else {
+                    console.log("Nope!");
+                };
+                break;
+            
+            case "multiply":
+                if (display == "") {
+                    popDisplay("*");
+                    secondNumberOperation = false;
+                } else {
+                    console.log("Nope!");
+                };
+                break;
+            
+            case "division":
+                if (display == "") {
+                    popDisplay("÷");
+                    secondNumberOperation = false;
+                } else {
+                    console.log("Nope!");
+                };
+                break;
             
             case "equals":
                 if (secondNumber != "") {
                     let result = operate(firstNumber, operator, secondNumber);
                     popDisplay(result);
-                    console.log("this is also true")
     
                     firstNumber = result;
                     secondNumber = "";
