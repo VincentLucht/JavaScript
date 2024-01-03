@@ -35,3 +35,25 @@ function operate(firstNumber, operator, secondNumber) {
         break;
     }
 }
+
+
+// Event listeners
+let display = document.querySelector("#inputField")
+let displayVariable;
+let numpad = document.querySelector(".numpad");
+numpad.addEventListener("click", (event) => {
+    let target = event.target;
+
+    switch(target.id) {
+        case "7": populateDisplay(7);
+        break;
+
+        // section 1
+        case "+": populateDisplay("+");
+        break;
+    }
+})
+
+function populateDisplay(number) {
+    display.textContent = number;
+}
