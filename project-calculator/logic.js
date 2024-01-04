@@ -159,6 +159,7 @@ buttons.forEach(function(button) {
                 clearDisplay();
                 break;
         }
+        alwaysZero()
     } 
     
     else if (secondNumberOperation == true) {
@@ -279,6 +280,11 @@ function popDisplay(number) {
     display.textContent = number;
 };
 
+function alwaysZero() {
+    if (display.textContent == "") {
+        display.textContent = "0";
+    }
+}
 
 function clearDisplay() {
     firstNumber = ""; 

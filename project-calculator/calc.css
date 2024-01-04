@@ -1,12 +1,8 @@
 * {
     margin: 0px;
     padding: 0px;
-}
 
-/* div hitbox */
-/* div {
-    border: 1px solid wheat;
-} */
+}
 
 main {
     display: flex;
@@ -15,15 +11,11 @@ main {
     height: 100vh;
 }
 
-.operators {
-    display: flex;
-    flex-direction: column;
-}
-
 /* numpad properties */
 .num {
     width: 75px;
     height: 75px;
+    border: 1px solid;
 }
 
 .inputDiv {
@@ -34,13 +26,30 @@ main {
 #inputField {
     height: 50px;
     width: 100%;
-    border: 2px solid wheat;
+    text-align: right;
+    font-family: 'Digital-7 Mono', sans-serif;
+    font-size: 28px;
 }
 
-/* grow the clear/delete and 0 buttons */
-#clear, #delete {
-    width: 36.7%
-}
 #zero {
-    width: 49.3%;
+    width: 48.6%;
+}
+
+/* section 5 */
+#section-5 {
+    display: flex;
+    width: 327px;
+
+}
+#clear-delete-container {
+    display: flex;
+    width: 250px;
+    gap: 9px;
+    margin-right: 9px;
+}
+#clear, #delete {
+    width: 117px;
+}
+#division {
+    width: 78px;
 }
