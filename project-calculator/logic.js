@@ -1,3 +1,4 @@
+// math functions
 function add(a, b) {
     return a + b;
 };
@@ -14,10 +15,11 @@ function divide(a, b) {
     if (b !== 0) {
         return a / b;
     } else {
-        return "You thought, I wouldn't think of this?";
+        return "Nope";
     };
 };
 
+// operations
 let firstNumber = "";
 let operator = "";
 let secondNumber = "";
@@ -159,7 +161,9 @@ buttons.forEach(function(button) {
                 clearDisplay();
                 break;
         }
+        checkSnarkyMessage()
         alwaysZero()
+        resizeText()
     } 
     
     else if (secondNumberOperation == true) {
@@ -278,6 +282,7 @@ buttons.forEach(function(button) {
 
 function popDisplay(number) {
     display.textContent = number;
+    resizeText();
 };
 
 function alwaysZero() {
@@ -286,7 +291,38 @@ function alwaysZero() {
     }
 }
 
+function resizeText() {
+    let displayLength = display.textContent.length;
+    let normalFontSize = 42;
+    let textSize;
+    
+    if (displayLength <= 12) {
+        display.style.fontSize = normalFontSize + "px";
+    }
+    else if (displayLength > 12 && displayLength <= 13) {
+        textSize = normalFontSize - displayLength * 0.3;
+        display.style.fontSize = textSize + "px";
+    }
+    else if (displayLength >= 13 && displayLength <= 16) {
+        textSize = normalFontSize - displayLength * 0.6;
+        display.style.fontSize = textSize + "px";
+    }
+    else if (displayLength >= 16 && displayLength <= 20) {
+        textSize = normalFontSize - displayLength * 0.8;
+        display.style.fontSize = textSize + "px";
+    }
+    else if (displayLength >= 20 && displayLength <= 26) {
+        textSize = normalFontSize - displayLength * 0.9;
+        display.style.fontSize = textSize + "px";
+    }
+    else if (displayLength == 27) {
+        console.log("Why are you still typing")
+    }
+    console.log(displayLength)
+}
+
 function clearDisplay() {
+    display.style.fontSize = 42 + "px";
     firstNumber = ""; 
     secondNumber = "";
     operator = "";
@@ -297,6 +333,7 @@ function clearDisplay() {
 };
 
 function deleteLastDigit() {
+    resizeText()
     if (firstNumberOperation == true) {
         firstNumber = firstNumber.slice(0, -1);
         popDisplay(firstNumber);
@@ -305,3 +342,10 @@ function deleteLastDigit() {
         popDisplay(secondNumber);
     };
 };
+
+function checkSnarkyMessage() {
+    if (display.textContent.includes("Nope")) {
+        display.textContent = display.textContent.replace("Nope", "");
+        firstNumber = display.textContent;
+    }
+}

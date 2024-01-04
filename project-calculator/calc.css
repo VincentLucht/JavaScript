@@ -36,16 +36,19 @@ main {
 
 .inputDiv {
     display: flex;
-    justify-content: center;
-    align-items: center;  
+    justify-content: flex-end;
+    align-items: center;
     background-color: #262628;
+    height: 75px;
+    max-width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 #inputField {
-    height: 75px;
-    width: 100%;
-    text-align: right;
     font-family: 'Digital-7 Mono', sans-serif;
-    font-size: 28px;
+    font-size: 42px;
+    font-weight: lighter;
+    margin-right: 8px;
 }
 
 
