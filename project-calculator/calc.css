@@ -1,7 +1,13 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-size: 28px;
+    font-family: "SanFranciscoText-Regular";
+    color: white;
+}
 
+body {
+    background-color: #111517;
 }
 
 main {
@@ -12,44 +18,70 @@ main {
 }
 
 /* numpad properties */
+.numpad {
+    border: 2px solid #696b6c;
+    border-radius: 4px;
+}
 .num {
     width: 75px;
     height: 75px;
-    border: 1px solid;
+    border: none;
+    background-color: #5c5c5e;
+    margin: 0px;
+    padding: 0px;
+}
+.num:active {
+    background-color: #9c9c9d;
 }
 
 .inputDiv {
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;  
+    background-color: #262628;
 }
 #inputField {
-    height: 50px;
+    height: 75px;
     width: 100%;
     text-align: right;
     font-family: 'Digital-7 Mono', sans-serif;
     font-size: 28px;
 }
 
-#zero {
-    width: 48.6%;
+
+/* operation color */
+.operation {
+    color: white;
+    background-color: #fe9e0c;
 }
+.operation:active {
+    background-color: #cb7d04;
+}
+#multiply {
+    font-size: 20px;
+}
+
 
 /* section 5 */
-#section-5 {
-    display: flex;
-    width: 327px;
-
+.removed {
+    background-color: #3b3b3d;
 }
-#clear-delete-container {
+.removed:active {
+    background-color: #595a5b;
+}
+
+/* all sections */
+#section-5, #section-4, #section-3, #section-2, #section-1 {
     display: flex;
-    width: 250px;
-    gap: 9px;
-    margin-right: 9px;
+    width: 300px;
+}
+.num {
+    border: 1px solid black;
+}
+
+#zero {
+    width: 150px;
 }
 #clear, #delete {
-    width: 117px;
-}
-#division {
-    width: 78px;
+    width: 112.5px;
 }
