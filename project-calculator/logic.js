@@ -109,47 +109,57 @@ buttons.forEach(function(button) {
     
             // operators
             case "plus":
-                if (firstNumber == "") {
+                if (preventInvalidOperation() == true) {
+                    // do nothing
+                } else if (firstNumber == "") {
                     console.log("Add a number first please.");
                 } else {
                     popDisplay("+");
                     firstNumberOperation = false;
                     secondNumberOperation = true;
                     operator = "plus";
-                }
+                };                
                 break;
             
             case "minus":
-                if (firstNumber == "") {
+                if (preventInvalidOperation() == true) {
+                    // do nothing
+                } else if (firstNumber == "") {
                     console.log("Add a number first please.");
                 } else {
                     popDisplay("-");
                     firstNumberOperation = false;
                     secondNumberOperation = true;
                     operator = "minus";
-                }
+                };            
                 break;
 
             case "multiply":
-                if (firstNumber == "") {
+                if (preventInvalidOperation() == true) {
+                    // do nothing
+                } 
+                else if (firstNumber == "") {
                     console.log("Add a number first please.");
                 } else {
                     popDisplay("*");
                     firstNumberOperation = false;
                     secondNumberOperation = true;
                     operator = "multiply";
-                }
+                };          
                 break;
             
             case "division":
-                if (firstNumber == "") {
+                if (preventInvalidOperation() == true) {
+                    // do nothing
+                }
+                else if (firstNumber == "") {
                     console.log("Add a number first please.");
                 } else {
                     popDisplay("÷");
                     firstNumberOperation = false;
                     secondNumberOperation = true;
                     operator = "division";
-                }
+                };
                 break;
     
             // clear/delete
@@ -161,9 +171,9 @@ buttons.forEach(function(button) {
                 clearDisplay();
                 break;
         };
-        checkSnarkyMessage()
-        alwaysZero()
-        resizeText()
+        checkSnarkyMessage();
+        alwaysZero();
+        resizeText();
     }
     
     else if (secondNumberOperation == true) {
@@ -348,6 +358,13 @@ function checkSnarkyMessage() {
     if (display.textContent.includes("Nope")) {
         display.textContent = display.textContent.replace("Nope", "");
         firstNumber = display.textContent;
+    };
+};
+
+function preventInvalidOperation() {
+    if (display.textContent.includes("Nope")) {
+        console.log("I told you nope!");
+        return true;
     };
 };
 
