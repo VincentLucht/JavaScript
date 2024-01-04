@@ -160,11 +160,11 @@ buttons.forEach(function(button) {
             case "clear":
                 clearDisplay();
                 break;
-        }
+        };
         checkSnarkyMessage()
         alwaysZero()
         resizeText()
-    } 
+    }
     
     else if (secondNumberOperation == true) {
         switch (button.id) {
@@ -274,8 +274,8 @@ buttons.forEach(function(button) {
             case "clear":
                 clearDisplay();
                 break;
-        }
-    }
+        };
+    };
     });
 });
 
@@ -288,14 +288,15 @@ function popDisplay(number) {
 function alwaysZero() {
     if (display.textContent == "") {
         display.textContent = "0";
-    }
-}
+    };
+};
 
 function resizeText() {
     let displayLength = display.textContent.length;
     let normalFontSize = 42;
     let textSize;
     
+    // resizes text so that it fits the text
     if (displayLength <= 12) {
         display.style.fontSize = normalFontSize + "px";
     }
@@ -315,11 +316,11 @@ function resizeText() {
         textSize = normalFontSize - displayLength * 0.9;
         display.style.fontSize = textSize + "px";
     }
+    // stops resizing it, if over 27
     else if (displayLength == 27) {
         console.log("Why are you still typing")
-    }
-    console.log(displayLength)
-}
+    };
+};
 
 function clearDisplay() {
     display.style.fontSize = 42 + "px";
@@ -335,10 +336,10 @@ function clearDisplay() {
 function deleteLastDigit() {
     resizeText()
     if (firstNumberOperation == true) {
-        firstNumber = firstNumber.slice(0, -1);
+        firstNumber = String(firstNumber).slice(0, -1);
         popDisplay(firstNumber);
     } else if (firstNumberOperation == false) {
-        secondNumber = secondNumber.slice(0, -1);
+        secondNumber = String(secondNumber).slice(0, -1);
         popDisplay(secondNumber);
     };
 };
@@ -347,5 +348,15 @@ function checkSnarkyMessage() {
     if (display.textContent.includes("Nope")) {
         display.textContent = display.textContent.replace("Nope", "");
         firstNumber = display.textContent;
-    }
-}
+    };
+};
+
+// user inputs first number 
+// user inputs operator
+// user inputs second operator 
+// if user types operator again
+    // show result on display 
+    // save the result
+        // if user types operator again
+        // show result on display
+        // save the result
