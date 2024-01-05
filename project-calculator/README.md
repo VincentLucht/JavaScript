@@ -3,7 +3,7 @@
 What I learned:
 
 Javascript
-- reinforced concepts of type conversion, switch cases, scope, etc.
+- reinforced knowledge of basic concepts of type conversion, switch cases, scope, etc.
 - how to keep code more concise and readable 
 - how to debug (use Javascript developer console, console.log)
 - learned a lot about how Javascript interacts with HTML and CSS
