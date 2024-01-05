@@ -23,6 +23,7 @@ function divide(a, b) {
 let firstNumber = "";
 let operator = "";
 let secondNumber = "";
+let result;
 
 let firstNumberOperation = true;
 let secondNumberOperation = false;
@@ -45,7 +46,6 @@ function operate(firstNumber, operator, secondNumber) {
             return divide(num1, num2);
     };
 };
-
 
 // Event listeners
 let display = document.querySelector("#inputField")
@@ -230,7 +230,12 @@ buttons.forEach(function(button) {
     
             // operators
             case "plus":
-                if (display == "") {
+                operator = "plus"
+                if (secondNumber != "") { // disallows user to press operation 2x, which would result in NaN
+                    showResult() 
+                }
+                if (display.textContent == "") {
+                    operator = "plus"
                     popDisplay("+");
                     secondNumberOperation = false;
                 } else {
@@ -239,7 +244,12 @@ buttons.forEach(function(button) {
                 break;
 
             case "minus":
-                if (display == "") {
+                operator = "minus"
+                if (secondNumber != "") {
+                    showResult() 
+                }
+                if (display.textContent == "") {
+                    operator = "minus"
                     popDisplay("-");
                     secondNumberOperation = false;
                 } else {
@@ -248,7 +258,11 @@ buttons.forEach(function(button) {
                 break;
             
             case "multiply":
-                if (display == "") {
+                operator = "multiply"
+                if (secondNumber != "") {
+                    showResult() 
+                }
+                if (display.textContent == "") {
                     popDisplay("*");
                     secondNumberOperation = false;
                 } else {
@@ -257,7 +271,11 @@ buttons.forEach(function(button) {
                 break;
             
             case "division":
-                if (display == "") {
+                operator = "division"
+                if (secondNumber != "") {
+                    showResult() 
+                }
+                if (display.textContent == "") {
                     popDisplay("÷");
                     secondNumberOperation = false;
                 } else {
@@ -267,18 +285,17 @@ buttons.forEach(function(button) {
             
             case "equals":
                 if (secondNumber != "") {
-                    let result = operate(firstNumber, operator, secondNumber);
-                    popDisplay(result);
-    
-                    firstNumber = result;
-                    secondNumber = "";
-                    firstNumberOperation = true;
+                    calculateResult();
                 };
                 break;
     
             // clear/delete
             case "delete":
-                deleteLastDigit()
+                if (disallowOperatorDeletion() == true) {
+                    // do nothing
+                } else {
+                    deleteLastDigit()
+                }
                 break;
             
             case "clear":
@@ -338,7 +355,7 @@ function clearDisplay() {
     secondNumber = "";
     operator = "";
     result = "";
-    popDisplay("");
+    popDisplay("0");
 
     firstNumberOperation = true;
 };
@@ -348,9 +365,14 @@ function deleteLastDigit() {
     if (firstNumberOperation == true) {
         firstNumber = String(firstNumber).slice(0, -1);
         popDisplay(firstNumber);
-    } else if (firstNumberOperation == false) {
-        secondNumber = String(secondNumber).slice(0, -1);
-        popDisplay(secondNumber);
+    } else if (secondNumberOperation == true) {
+        if (display.textContent == result) {
+            result = String(result).slice(0, -1);
+            popDisplay(result);
+        } else if (display.textContent == secondNumber) {
+            secondNumber = String(secondNumber).slice(0, -1);
+            popDisplay(secondNumber);
+        }
     };
 };
 
@@ -368,12 +390,28 @@ function preventInvalidOperation() {
     };
 };
 
-// user inputs first number 
-// user inputs operator
-// user inputs second operator 
-// if user types operator again
-    // show result on display 
-    // save the result
-        // if user types operator again
-        // show result on display
-        // save the result
+function showResult() {
+    result = operate(firstNumber, operator, secondNumber);
+    popDisplay(result);
+
+    firstNumber = result;
+    secondNumber = "";
+    firstNumberOperation = false;
+};
+
+function calculateResult() {
+    result = operate(firstNumber, operator, secondNumber);
+    popDisplay(result);
+
+    firstNumber = result;
+    secondNumber = "";
+    firstNumberOperation = true;
+};
+
+function disallowOperatorDeletion() {
+    if (display.textContent == "+" || display.textContent == "-" || 
+        display.textContent == "*" || display.textContent == "÷") {
+            console.log("Can't delete mathematical operator");
+            return true;
+        };
+};
