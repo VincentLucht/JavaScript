@@ -232,7 +232,7 @@ buttons.forEach(function(button) {
                 if (secondNumber != "") { // disallows user to press operation 2x, which would result in NaN
                     calculateAndShowResult(false) 
                 }
-                operator = "plus" // add feature that shows which operation you are currently on
+                operator = "plus"
                 secondNumberOperation = true;
                 break;
 
@@ -383,3 +383,10 @@ function disallowOperatorDeletion() {
             return true;
         };
 };
+
+// In case I want to return to this project in the future!
+// everything works here! The switch cases could be more concise... but it works!
+// Other stuff that I wanted to do
+    // add feature that shows which operation you are currently on, when you press it
+    // add support for decimals
+    // add keyboard support
