@@ -157,7 +157,7 @@ buttons.forEach(function(button) {
                 } else {
                     popDisplay("÷");
                     firstNumberOperation = false;
-                    secondNumberOperation = true;
+                     secondNumberOperation = true;
                     operator = "division";
                 };
                 break;
@@ -230,57 +230,37 @@ buttons.forEach(function(button) {
     
             // operators
             case "plus":
-                operator = "plus"
                 if (secondNumber != "") { // disallows user to press operation 2x, which would result in NaN
                     showResult() 
                 }
-                if (display.textContent == "") {
-                    operator = "plus"
-                    popDisplay("+");
-                    secondNumberOperation = false;
-                } else {
-                    console.log("Nope!");
-                };
+                operator = "plus" // add feature that shows which operation you are currently on
+                secondNumberOperation = true;
                 break;
 
             case "minus":
-                operator = "minus"
                 if (secondNumber != "") {
                     showResult() 
                 }
-                if (display.textContent == "") {
-                    operator = "minus"
-                    popDisplay("-");
-                    secondNumberOperation = false;
-                } else {
-                    console.log("Nope!");
-                };
+                operator = "minus"
+                secondNumberOperation = true;
                 break;
             
             case "multiply":
-                operator = "multiply"
                 if (secondNumber != "") {
                     showResult() 
                 }
-                if (display.textContent == "") {
-                    popDisplay("*");
-                    secondNumberOperation = false;
-                } else {
-                    console.log("Nope!");
-                };
+                operator = "multiply"
+                secondNumberOperation = true;
                 break;
             
             case "division":
-                operator = "division"
                 if (secondNumber != "") {
-                    showResult() 
+                    showResult()
+                    console.log("im inside of if")
                 }
-                if (display.textContent == "") {
-                    popDisplay("÷");
-                    secondNumberOperation = false;
-                } else {
-                    console.log("Nope!");
-                };
+                operator = "division"
+                secondNumberOperation = true;
+                console.log("Im outside of if")
                 break;
             
             case "equals":
