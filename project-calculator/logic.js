@@ -231,7 +231,7 @@ buttons.forEach(function(button) {
             // operators
             case "plus":
                 if (secondNumber != "") { // disallows user to press operation 2x, which would result in NaN
-                    showResult() 
+                    calculateAndShowResult(false) 
                 }
                 operator = "plus" // add feature that shows which operation you are currently on
                 secondNumberOperation = true;
@@ -239,7 +239,7 @@ buttons.forEach(function(button) {
 
             case "minus":
                 if (secondNumber != "") {
-                    showResult() 
+                    calculateAndShowResult(false) 
                 }
                 operator = "minus"
                 secondNumberOperation = true;
@@ -247,7 +247,7 @@ buttons.forEach(function(button) {
             
             case "multiply":
                 if (secondNumber != "") {
-                    showResult() 
+                    calculateAndShowResult(false) 
                 }
                 operator = "multiply"
                 secondNumberOperation = true;
@@ -255,17 +255,15 @@ buttons.forEach(function(button) {
             
             case "division":
                 if (secondNumber != "") {
-                    showResult()
-                    console.log("im inside of if")
+                    calculateAndShowResult(false)
                 }
                 operator = "division"
                 secondNumberOperation = true;
-                console.log("Im outside of if")
                 break;
             
             case "equals":
                 if (secondNumber != "") {
-                    calculateResult();
+                    calculateAndShowResult(condition=true);
                 };
                 break;
     
@@ -370,22 +368,13 @@ function preventInvalidOperation() {
     };
 };
 
-function showResult() {
+function calculateAndShowResult(condition) {
     result = operate(firstNumber, operator, secondNumber);
     popDisplay(result);
 
     firstNumber = result;
     secondNumber = "";
-    firstNumberOperation = false;
-};
-
-function calculateResult() {
-    result = operate(firstNumber, operator, secondNumber);
-    popDisplay(result);
-
-    firstNumber = result;
-    secondNumber = "";
-    firstNumberOperation = true;
+    firstNumberOperation = condition;
 };
 
 function disallowOperatorDeletion() {
