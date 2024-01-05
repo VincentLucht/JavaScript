@@ -49,7 +49,6 @@ function operate(firstNumber, operator, secondNumber) {
 
 // Event listeners
 let display = document.querySelector("#inputField")
-let displayVariable;
 let buttons = document.querySelectorAll('.num');
 
 // Loop through each button and add a click event listener
@@ -239,7 +238,7 @@ buttons.forEach(function(button) {
 
             case "minus":
                 if (secondNumber != "") {
-                    calculateAndShowResult(false) 
+                    calculateAndShowResult(setFirstOperation=false) 
                 }
                 operator = "minus"
                 secondNumberOperation = true;
@@ -247,7 +246,7 @@ buttons.forEach(function(button) {
             
             case "multiply":
                 if (secondNumber != "") {
-                    calculateAndShowResult(false) 
+                    calculateAndShowResult(setFirstOperation=false) 
                 }
                 operator = "multiply"
                 secondNumberOperation = true;
@@ -255,7 +254,7 @@ buttons.forEach(function(button) {
             
             case "division":
                 if (secondNumber != "") {
-                    calculateAndShowResult(false)
+                    calculateAndShowResult(setFirstOperation=false)
                 }
                 operator = "division"
                 secondNumberOperation = true;
@@ -263,7 +262,7 @@ buttons.forEach(function(button) {
             
             case "equals":
                 if (secondNumber != "") {
-                    calculateAndShowResult(condition=true);
+                    calculateAndShowResult(setFirstOperation=true);
                 };
                 break;
     
@@ -368,13 +367,13 @@ function preventInvalidOperation() {
     };
 };
 
-function calculateAndShowResult(condition) {
+function calculateAndShowResult(setFirstOperation) {
     result = operate(firstNumber, operator, secondNumber);
     popDisplay(result);
 
     firstNumber = result;
     secondNumber = "";
-    firstNumberOperation = condition;
+    firstNumberOperation = setFirstOperation;
 };
 
 function disallowOperatorDeletion() {
